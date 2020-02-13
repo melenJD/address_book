@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/header.ejs') %>
+</head>
+<body>
+  <%- include('../partials/nav.ejs') %>
+  <div class="contact contact-show">
+    <h2>Show</h2>
+    <div>
+      <h3><%= contact.name %></h3>
+      <label>나이 </label><span><%= contact.age %></span><br>
+      <label>이메일 </label><span><%= contact.email %></span><br>
+      <label>주소 </label><span><%= contact.address %></span>
+    </div>
+    <div class="contact-menu">
+      <a href="/contacts/<%= contact._id %>/edit %>">Edit</a>
+      <form action="/contacts/<%= contact._id %>?_method=delete" method="post">
+        <a href="#" onclick="confirm('Do you wanna delete this?')?this.parentElement.submit():null;">Delete</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
